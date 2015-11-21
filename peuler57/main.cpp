@@ -21,12 +21,11 @@ void first_four()
 		numerator = first.first + first.second;
 		if (number_of_digits(numerator) > number_of_digits(first.second)) count++;
 	}
-	std::cout << "Number: " << count;
+	std::cout << "Answer: " << count << "\n";
 }
 int main()
 {
-	first_four();
-	first_four();
+	first_four(); // prerun
 	bench_timer bt;
 	first_four();
 	return 0;

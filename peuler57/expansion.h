@@ -1,9 +1,11 @@
 #pragma once
 #include <utility>
 #include <string>
-#include <algorithm>
+
 namespace peuler57
 {
+
+	// Initial algorithm
 	template<typename IntegerType>
 	std::pair<IntegerType,IntegerType> next_expansion(const std::pair<IntegerType,IntegerType>& expansion, uint64_t n)
 	{
@@ -18,7 +20,7 @@ namespace peuler57
 
 		return std::make_pair(numerator, denominator);
 	}
-
+	// Less compute intensive from project euler forum.
 	template<typename IntegerType>
 	std::pair<IntegerType,IntegerType> next_expansion_better(const std::pair<IntegerType,IntegerType>& expansion)
 	{
@@ -31,7 +33,7 @@ namespace peuler57
 	void next_expansion_better_inplace(std::pair<I,I>& expansion)
 	{
 		std::swap(expansion.first, expansion.second);
-		expansion.second += expansion.first*2u;
+		expansion.second += expansion.first;
 	}
 
 	template<typename BoostInteger>
